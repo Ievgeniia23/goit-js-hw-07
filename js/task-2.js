@@ -55,8 +55,13 @@ imageEl.style.height = '300px'
 gallery.style.listStyle = 'none';
 gallery.style.display = 'flex';
 gallery.style.flexWrap = 'wrap';
-gallery.style.gap = '48px 24px';
-gallery.style.justifyContent = 'space-between';
+gallery.style.columnGap = '24px';
+gallery.style.rowGap = '48px';
+
+
+
+    
+    
 
 
 
