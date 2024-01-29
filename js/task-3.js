@@ -1,12 +1,21 @@
-`use ctrict`;
+'use strict';
 
-function getElementWidth(content, padding, border) {
-    
-return (parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2);
+const nameInput = document.getElementById('name-input')
+console.log(nameInput);
+
+const nameOutput = document.getElementById('name-output')
+console.log(nameOutput);
+
+function inputHandler(event) {
+const trimmedValue = nameInput.value.trim();
+
+if (trimmedValue === '') {
+    nameOutput.textContent = 'Anonymous';
+} else {
+nameOutput.textContent = trimmedValue;
+}
 }
 
 
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
 
+nameInput.addEventListener('input', inputHandler);
