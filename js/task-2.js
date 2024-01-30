@@ -32,6 +32,7 @@ const images = [
   },
 ];
 
+const fragment = document.createDocumentFragment()
 const gallery = document.querySelector(".gallery");
 
 images.forEach(image => {
@@ -41,23 +42,23 @@ images.forEach(image => {
 
     imageEl.setAttribute('src', image.url);
     imageEl.setAttribute('alt', image.alt);
-    imageEl.setAttribute('src', image.url);
-    imageEl.setAttribute('alt', image.alt);
-
+    
   listItem.append(imageEl);
-  gallery.append(listItem)
+  fragment.append(listItem);
 
 imageEl.style.width = '360px'
 imageEl.style.height = '300px'
 
 })
  
+gallery.append(fragment);
+
+
 gallery.style.listStyle = 'none';
 gallery.style.display = 'flex';
 gallery.style.flexWrap = 'wrap';
 gallery.style.columnGap = '24px';
 gallery.style.rowGap = '48px';
-
 
 
     
